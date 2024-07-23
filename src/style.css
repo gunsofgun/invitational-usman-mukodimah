@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.alex-brush {
+    font-family: "Alex Brush", cursive;
+}
+
+.ibarra {
+    font-family: "Ibarra Real Nova", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }

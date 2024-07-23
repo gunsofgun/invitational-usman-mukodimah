@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>The Wedding of Usman and Mukodimah | Treenity Studio</title>
+  </head>
+  <body>
+    <div class="container max-w-md mx-auto">
+      <div
+        class="bg-cover text-center text-white h-screen"
+        id="cover"
+        style="
+          background-image: url(./images/cover.png);
+          background-position: center;
+        "
+      >
+        <div class="flex flex-col justify-between h-screen py-16">
+          <div class="animate__animated animate__fadeInUp">
+            <p class="text-[10pt] tracking-[0.2em] font-light">
+              INVITE YOU <br />
+              TO OUR WEDDING CELEBRATION
+            </p>
+            <div class="alex-brush mt-6 text-7xl -rotate-6 mx-9">
+              <h2 class="h-16 text-left">U. Usman</h2>
+              <h2 class="h-10 text-6xl">&</h2>
+              <h2 class="text-right">Mukodimah</h2>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-evenly items-center ibarra">
+              <div>
+                <p class="border-y-[0.5px] py-2 px-5 border-white">SUNDAY</p>
+              </div>
+              <div class="text-2xl">
+                <p>AUG</p>
+                <p class="text-5xl">18</p>
+                <p>2024</p>
+              </div>
+              <div>
+                <p class="border-y-[0.5px] py-2 px-5 border-white">11.00 AM</p>
+              </div>
+            </div>
+
+            <button
+              onclick="openInv()"
+              class="border-white border rounded-xl inline-block px-8 py-1 text-md mt-5 font-mont"
+            >
+              TAP TO OPEN INVITATION
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="content-inv" class="bg-[#242223] text-white">
+        <div class="container">
+          <img src="./images/head-content.png" alt="" />
+          <div class="relative -top-8 mb-6">
+            <p
+              class="text-center text-white ibarra font-extralight text-base mx-10 pb-4"
+            >
+              "Kebahagiaan adalah saat menikah dengan sahabat terbaikmu, maha
+              suci Allah menciptakan berpasang-pasangan agar kamu mengingat
+              kebesaran-Nya" <br />
+              <span class="italic">Qs adz-dzariyaat 51:49</span>
+            </p>
+            <div class="flex justify-center">
+              <hr class="w-10" />
+            </div>
+          </div>
+
+          <p class="text-center text-white text-3xl font-semibold ibarra">
+            Our Wedding Day
+          </p>
+          <!-- Timeline -->
+          <div class="py-8 flex flex-col justify-center">
+            <div class="w-full px-6">
+              <div class="relative antialiased text-sm font-semibold">
+                <!-- Vertical bar running through middle -->
+                <div
+                  class="block w-[2px] bg-white absolute h-full left-1/2 transform -translate-x-1/2"
+                ></div>
+
+                <!-- Left -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-start w-full mx-auto items-center">
+                    <div class="w-1/2 pr-8">
+                      <div class="p-3 text-white text-right">
+                        <p class="font-bold text-lg">13:30 - 15:00</p>
+                        <p class="font-light text-sm">Wedding Agreement</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] right-1/2 mt-10 text-white"
+                  ></div>
+                </div>
+
+                <!-- Right -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-end w-full mx-auto items-center">
+                    <div class="w-1/2 pl-8">
+                      <div class="p-3 text-white text-left">
+                        <p class="font-bold text-lg">16:00 - 18:00</p>
+                        <p class="font-light text-sm">Music & Break</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] left-1/2 mt-10 transform -translate-y-1/2"
+                  ></div>
+                </div>
+
+                <!-- Left -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-start w-full mx-auto items-center">
+                    <div class="w-1/2 pr-8">
+                      <div class="p-3 text-white text-right">
+                        <p class="font-bold text-lg">19:00 - 19:30</p>
+                        <p class="font-light text-sm">Opening Reception</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] right-1/2 mt-10 text-white"
+                  ></div>
+                </div>
+
+                <!-- Right -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-end w-full mx-auto items-center">
+                    <div class="w-1/2 pl-8">
+                      <div class="p-3 text-white text-left">
+                        <p class="font-bold text-lg">19:30 - 20:00</p>
+                        <p class="font-light text-sm">Bride's Speech</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] left-1/2 mt-10 transform -translate-y-1/2"
+                  ></div>
+                </div>
+
+                <!-- Left -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-start w-full mx-auto items-center">
+                    <div class="w-1/2 pr-8">
+                      <div class="p-3 text-white text-right">
+                        <p class="font-bold text-lg">20:00 - 22:00</p>
+                        <p class="font-light text-sm">
+                          Fun Games, Doorprize & Music
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] right-1/2 mt-10 text-white"
+                  ></div>
+                </div>
+
+                <!-- Right -->
+                <div class="flex flex-col items-center">
+                  <div class="flex justify-end w-full mx-auto items-center">
+                    <div class="w-1/2 pl-8">
+                      <div class="p-3 text-white text-left">
+                        <p class="font-bold text-lg">22:00</p>
+                        <p class="font-light text-sm">Closing</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="block h-[2px] bg-white absolute w-[8%] left-1/2 mt-10 transform -translate-y-1/2"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 mb-24 relative">
+            <p class="text-center ibarra px-4 text-3xl">
+              Therefore, <i>Together</i> With <br />
+              Their Families
+            </p>
+
+            <div class="absolute top-10 -right-14 -rotate-6">
+              <img src="./images/flower.png" alt="" width="180">
+            </div>
+
+            <div class="flex gap-5 justify-center mx-10 mt-20">
+              <img
+                src="./images/cowo.png"
+                alt="manten pria"
+                width="180"
+              />
+              <div class="my-auto w-1/2">
+                <h1 class="ibarra text-4xl">U. Usman</h1>
+                <p class="text-xs font-extralight my-4">
+                  Putra dari Alm. Bapak Endin dan Ibu Ii Marikah <br />
+                  Cipanas, Cianjur
+                </p>
+                <a
+                  href="https://instagram.com/usmanalfarizi"
+                  class="flex items-center border border-white rounded-xl px-6 py-2 text-xs font-extralight text-white w-fit"
+                  target="_blank"
+                >
+                  <img src="./images/ig.png" alt="" class="mr-1" width="10" />
+                  <span>@usmanalfarizi</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="ibarra text-center my-6 text-5xl">
+              <p>&</p>
+            </div>
+
+            <div class="flex gap-5 justify-center mx-10">
+              <div class="my-auto w-1/2">
+                <h1 class="ibarra text-4xl">Mukodimah</h1>
+                <p class="text-xs font-extralight my-4">
+                  Putri dari Ade Lahardian <br />
+                  dan Isma Aisah<br />
+                  Sumberjaya, Majalengka
+                </p>
+                <a
+                  href="https://instagram.com/mukodimahh"
+                  class="flex items-center border border-white rounded-xl px-6 py-2 text-xs font-extralight text-white w-fit"
+                  target="_blank"
+                >
+                  <img src="./images/ig.png" alt="" class="mr-1" width="10" />
+                  <span>@mukodimahh</span>
+                </a>
+              </div>
+              <img
+                src="./images/cewe.png"
+                alt="manten pria"
+                width="180"
+              />
+            </div>
+
+            <div class="absolute -bottom-40 -left-20 rotate-[30deg]">
+              <img src="./images/flower.png" alt="" width="180">
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="bg-hitam text-white text-center mt-14">
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+
+          <div class="mb-10">
+            <p class="tracking-widest text-xl font-mont font-semibold ibarra">
+              AKAD NIKAH
+            </p>
+            <div class="ibarra flex justify-evenly text-5xl py-6">
+              <p>10</p>
+              <p>08</p>
+              <p>24</p>
+            </div>
+            <p class="uppercase mb-4">09.00 - selesai</p>
+            <p class="font-semibold">Mesjid Al Mujahidin</p>
+            <p class="font-extralight">Sumberjaya, Majalengka</p>
+          </div>
+          <div class="">
+            <p class="tracking-widest text-xl font-mont font-semibold ibarra">
+              RESEPSI
+            </p>
+            <div class="ibarra flex justify-evenly text-5xl py-6">
+              <p>18</p>
+              <p>08</p>
+              <p>24</p>
+            </div>
+            <p class="uppercase mb-4">10.00 - selesai</p>
+            <p class="font-semibold">Villa Panagan Indah</p>
+            <p class="font-extralight">Cipanas, Cianjur</p>
+          </div>
+
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+        </div>
+
+        <div class="text-center px-5 mt-10">
+          <p class="ibarra mt-6 text-3xl font-semibold">Akad Location</p>
+
+          <div style="width: 100%" class="p-5 pb-0">
+            <iframe
+              class="rounded-[2rem]"
+              width="100%"
+              height="200"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Masjid%20Al%20Mujahidin%20lojikobong)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ><a href="https://www.gps.ie/">gps devices</a>
+            </iframe>
+
+            <div class="font-mont mt-8">
+              <p class="uppercase font-bold text-sm">
+                Mesjid Al Mujahidin
+              </p>
+              <p class="uppercase text-[0.7rem] mt-3">
+                Loji Kobong, Kec. Sumberjaya, <br> Kabupaten Majalengka, Jawa Barat 45455
+              </p>
+              <div class="flex justify-center mt-3">
+                <a
+                  href="https://maps.app.goo.gl/88qAuqtsKqredFcV8"
+                  class="flex items-center border border-white rounded-xl px-6 py-2 text-[7pt] w-fit font-bold"
+                  target="_blank"
+                >
+                  <span class="uppercase text-xs font-extralight">Pentunjuk lokasi</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-36 mt-10">
+            <hr />
+          </div>
+
+          <p class="ibarra mt-6 text-3xl font-semibold">Resepsi Location</p>
+
+          <div style="width: 100%" class="p-5 pb-0">
+            <iframe
+              class="rounded-[2rem]"
+              width="100%"
+              height="200"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Villa%20Panagan%20Indah)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ><a href="https://www.gps.ie/">gps devices</a>
+            </iframe>
+
+            <div class="font-mont mt-8">
+              <p class="uppercase font-bold text-sm">
+                Villa Panagan Indah
+              </p>
+              <p class="uppercase text-[0.7rem] mt-3">
+                Jl. Panagan, Cipanas, Kec. Cipanas, <br> Kabupaten Cianjur, Jawa Barat 43253
+              </p>
+              <div class="flex justify-center mt-3">
+                <a
+                  href="https://maps.app.goo.gl/uAKb1FfjDNyMH9Ra8"
+                  class="flex items-center border border-white rounded-xl px-6 py-2 text-[7pt] w-fit font-bold"
+                  target="_blank"
+                >
+                  <span class="uppercase text-xs font-extralight">Pentunjuk lokasi</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-36 mt-10 mb-20">
+          <hr />
+        </div>
+
+        <img src="./images/illus.png" alt="">
+
+        <div class="relative -top-36 -mb-28">
+          <p class="text-center ibarra px-4 text-3xl mb-10">
+            Our Love Story
+          </p>
+  
+          <div class="px-8 font-extralight text-sm text-center">
+            <p class="mb-4">
+              Pada awalnya kita d pertemukan di salasatu Universitas jepang pada waktu itu kita hanya sekedar teman akrab biasa seperti pada umumnya tanpa terasa 5 thn pertemanan kita 
+              terasa semakin era, di karena kita sama-sama friendly tanpa seorangpun yg sadar kalau ternyata kita saling suka satu sama lain dan sering menghabiskan waktu bersama di 
+              setiap libur pergi main game jalan-jalan ke tempat wisata, mencoba makanan baru dll. 
+            </p>
+            <p class="mb-4">
+              Disaat itu friendzonepun di mulai entah sejak japan rasa ingin memiliki sepenuhnya itu datang namun keduanya saling bungkam, hingga suatu ketika kita liburan bersama ke 
+              Indonesia, dalam perjalanan menuju Pulang kita masih layaknya teman biasa hingga tak ada kecurigaan sedikitpun bahwa doi akan melamar. 
+            </p>
+            <p>
+              Singkat cerita doi menelphone dengan nada serius berniat utuk datang melamar dan Alhadulillah lamaran d terima dan kita memutuskan untuk menikah dan menjalim komitmen untuk 
+              menjadi keluarga yang samara.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-white text-center px-5">
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+          <h1 class="ibarra font-semibold text-3xl mb-4">Our Gallery</h1>
+
+          <div class="grid grid-cols-2 gap-4 *:rounded-xl">
+            <img class="col-span-2 transform hover:scale-105" src="./images/1.png" alt="">
+            <img class="transform hover:scale-105" src="./images/2.png" alt="">
+            <img class="transform hover:scale-105" src="./images/3.png" alt="">
+            <img class="col-span-2 transform hover:scale-105" src="./images/4.png" alt="">
+            <img class="transform hover:scale-105" src="./images/5.png" alt="">
+            <img class="transform hover:scale-105" src="./images/6.png" alt="">
+
+            <hr class="col-span-2 mx-10 my-4">
+
+            <img class="col-span-2 transform hover:scale-105" src="./images/7.png" alt="">
+            <img class="transform hover:scale-105" src="./images/8.png" alt="">
+            <img class="transform hover:scale-105" src="./images/9.png" alt="">
+
+            <hr class="col-span-2 mx-10 my-4">
+
+            <img class="col-span-2 transform hover:scale-105" src="./images/10.png" alt="">
+            <img class="transform hover:scale-105" src="./images/11.png" alt="">
+            <img class="transform hover:scale-105 h-full object-cover" src="./images/12.png" alt="">
+            <img class="col-span-2 transform hover:scale-105" src="./images/13.png" alt="">
+          </div>
+          
+        </div>
+
+        <div class="text-white text-center px-5">
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+
+          <div class="flex justify-center mb-8">
+            <img src="./images/illus-trans.png" alt="" width="300">
+          </div>
+
+          <h1 class="ibarra font-semibold text-3xl">Wedding Gift</h1>
+          <div class="mx-12 mt-5">
+            <div class="font-mont my-5">
+              <p class="font-semibold">Alamat Penerima</p>
+              <p class="text-xs font-light">
+                (Mukodimah) <br />
+                Blok Jumat RT/RW 03/07 Loji Kobong, <br> Sumberjaya, Majalengka
+              </p>
+            </div>
+            <div class="text-center p-6 rounded-3xl border-2 font-mont">
+              <div class="flex flex-col justify-center items-center">
+                <img src="./images/bri.png" alt="" width="80" />
+                <p class="mt-3 font-semibold text-2xl" id="copy-number">431501013258538</p>
+                <p class="text-sm">Mukodimah</p>
+                <button
+                  onclick="copyContent()"
+                  class="px-10 border border-white uppercase rounded-lg text-xs font-extralight py-1 mt-2"
+                >
+                  Salin
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+        </div>
+
+        <div class="text-white text-center px-5">
+          <h1 class="ibarra font-semibold text-3xl">Ucapan & Doa</h1>
+
+          <div class="mx-10 mt-5">
+            <form action="" class="*:border *:border-white *:p-2 *:bg-hitam *:rounded-xl *:w-full *:mb-3">
+              <input type="text" placeholder="Nama" name="nama">
+              <textarea name="pesan" id="" cols="30" rows="5" placeholder="Ucapan"></textarea>
+              <select name="kehadiran" id="" class="font-extralight">
+                <option selected disabled>Konfirmasi Kehadiran</option>
+                <option value="hadir">Hadir</option>
+                <option value="tidak">Tidak Hadir</option>
+              </select>
+              <input type="submit" value="Kirim" class="!w-1/2 font-bold">
+            </form>
+          </div>
+
+          <div class="mx-32 py-10">
+            <hr />
+          </div>
+
+          <div class="mx-5">
+            <div>
+              <p class="underline text-lg mb-4">Wishes</p>
+            </div>
+
+            <div class="text-left flex flex-col gap-2">
+              <div class="flex gap-2 items-center">
+                <p class="font-bold text-xl">Gunawan Pratama</p>
+                <p class="bg-white text-hitam h-fit rounded-full w-5 text-sm text-center">✓</p>
+              </div>
+              <p class="font-light">
+                Semoga Lancar &  Langgeng Sampai Hari h
+              </p>
+              <div class="flex gap-2">
+                <img src="./images/history.svg" alt="">
+                <p class="font-extralight text-xs">01 Aug 2024, 10.34</p>
+              </div>
+            </div>
+
+            <hr class="my-5">
+
+            <div class="text-left flex flex-col gap-2">
+              <div class="flex gap-2 items-center">
+                <p class="font-bold text-xl">Gunawan Pratama</p>
+                <p class="bg-white text-hitam h-fit rounded-full w-5 text-sm text-center">✓</p>
+              </div>
+              <p class="font-light">
+                Semoga Lancar &  Langgeng Sampai Hari h
+              </p>
+              <div class="flex gap-2">
+                <img src="./images/history.svg" alt="">
+                <p class="font-extralight text-xs">01 Aug 2024, 10.34</p>
+              </div>
+            </div>
+
+            <hr class="my-5">
+
+          </div>
+        </div>
+
+        <div class="text-white text-center font-gara pt-16">
+          <div
+            style="background-image: url(./images/foot.png)"
+            class="bg-cover"
+          >
+            <div>
+              <h1 class="text-5xl ibarra">Usman & <br> Mukodimah</h1>
+              <div class="mt-20 mb-28">
+                <p class="font-semibold ibarra text-2xl">Terima Kasih</p>
+                <p class="text-sm font-light mt-3 px-6">
+                  "Kami sampaikan pada tamu undangan, karena telah menyempatkan
+                  waktu hadir di tempat ini. Terima kasih untuk semua doa,
+                  ucapan, dan harapan yang telah diberikan."
+                </p>
+              </div>
+              <div class="mx-5 mt-10">
+                <div class="flex justify-center">
+                  <img src="./images/tree.png" alt="" width="150" />
+                </div>
+                <div class="flex gap-10 justify-evenly px-3 mt-5 font-light text-sm pb-28">
+                  <div>
+                    <a
+                      href="https://instagram.com/treenitystudio"
+                      class="flex align-middle"
+                      target="_blank"
+                    >
+                      <img src="./images/ig.png" alt="instagram" width="25" />
+                      <span class="ms-2 my-auto">Treenitystudio</span>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://wa.me/6287715579041"
+                      class="flex"
+                      target="_blank"
+                    >
+                      <img src="./images/wa.png" alt="whatsapp" width="25" />
+                      <span class="ms-2 my-auto">0877 1557 9041</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex fixed bottom-5 ms-4 cursor-pointer"
+        onclick="playMusic()"
+        id="btn-music"
+      >
+        <div
+          class="text-white border-2 bg-hitam rounded-full w-10 h-10 flex justify-center items-center border-white p-3"
+        >
+          <p class="text-sm" id="music-icon">▢</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
