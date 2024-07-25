@@ -40,11 +40,11 @@
       >
         <div class="flex flex-col justify-between h-screen py-16">
           <div class="animate__animated animate__fadeInUp">
-            <p class="text-[10pt] tracking-[0.2em] font-light">
-              WE ARE INVITE YOU <br />
-              TO OUR WEDDING CELEBRATION
+            <p class="text-center tracking-[0.2em] font-light px-4 text-[10pt] uppercase">
+              Therefore, <i>Together</i> With <br />
+              Their Families
             </p>
-            <div class="alex-brush mt-6 text-7xl -rotate-6 mx-9">
+            <div class="alex-brush mt-3 text-7xl -rotate-6 mx-9">
               <h2 class="h-16 text-left">Usman</h2>
               <h2 class="h-10 text-6xl">&</h2>
               <h2 class="text-right">Mukodimah</h2>
@@ -52,19 +52,10 @@
           </div>
 
           <div>
-            <div class="flex justify-evenly items-center ibarra">
-              <div>
-                <p class="border-y-[0.5px] py-2 px-5 border-white">SUNDAY</p>
-              </div>
-              <div class="text-2xl">
-                <p>AUG</p>
-                <p class="text-5xl">18</p>
-                <p>2024</p>
-              </div>
-              <div>
-                <p class="border-y-[0.5px] py-2 px-5 border-white">11.00 AM</p>
-              </div>
-            </div>
+            <p class="text-[10pt] tracking-wider font-light">
+              We Are Invite You <br />
+              To Our Wedding Celebration
+            </p>
 
             <button
               onclick="openInv()"
@@ -187,11 +178,6 @@
           </div>
 
           <div class="mt-10 mb-24 relative">
-            <p class="text-center ibarra px-4 text-3xl">
-              Therefore, <i>Together</i> With <br />
-              Their Families
-            </p>
-
             <div class="absolute top-10 right-0 -rotate-0">
               <img src="./images/flower-r.png" alt="" width="100">
             </div>
@@ -457,18 +443,21 @@
         </div>
 
         <div class="text-white text-center px-5">
-          <h1 class="alex-brush font-semibold text-3xl">Ucapan & Doa</h1>
+          <h1 class="alex-brush font-semibold text-3xl">Wishes & Prayers</h1>
 
           <div class="mx-10 mt-5">
-            <form action="" class="*:border *:border-white *:p-2 *:bg-hitam *:rounded-xl *:w-full *:mb-3">
-              <input type="text" placeholder="Nama" name="nama">
-              <textarea name="pesan" id="" cols="30" rows="5" placeholder="Ucapan"></textarea>
-              <select name="kehadiran" id="" class="font-extralight">
+            <form id="itemForm" class="*:border *:border-white *:p-2 *:bg-hitam *:rounded-xl *:w-full *:mb-3">
+              <input type="hidden" id="itemId">
+              <input type="text" placeholder="Nama" id="itemName" required>
+              <textarea id="itemMessage" cols="30" rows="5" placeholder="Ucapan"></textarea>
+              <select id="itemStatus" class="font-extralight">
                 <option selected disabled>Konfirmasi Kehadiran</option>
                 <option value="hadir">Hadir</option>
                 <option value="tidak">Tidak Hadir</option>
               </select>
-              <input type="submit" value="Kirim" class="!w-1/2 font-bold">
+              <button type="submit" class="!w-1/2 font-bold">
+                <span id="buttonSubmit">Kirim</span>
+              </button>
             </form>
           </div>
 
@@ -476,44 +465,13 @@
             <hr />
           </div>
 
-          <div class="mx-5">
-            <div>
-              <p class="underline text-lg mb-4">Wishes</p>
-            </div>
-
-            <div class="text-left flex flex-col gap-2">
-              <div class="flex gap-2 items-center">
-                <p class="font-bold text-xl">Gunawan Pratama</p>
-                <p class="bg-white text-hitam h-fit rounded-full w-5 text-sm text-center">✓</p>
-              </div>
-              <p class="font-light">
-                Semoga lancar sampai hari H dan menjadi keluarga yang SAMAWA 🤍
-              </p>
-              <div class="flex gap-2">
-                <img src="./images/history.svg" alt="">
-                <p class="font-extralight text-xs">01 Aug 2024, 10.34</p>
-              </div>
-            </div>
-
-            <hr class="my-5">
-
-            <!-- <div class="text-left flex flex-col gap-2">
-              <div class="flex gap-2 items-center">
-                <p class="font-bold text-xl">Gunawan Pratama</p>
-                <p class="bg-white text-hitam h-fit rounded-full w-5 text-sm text-center">✓</p>
-              </div>
-              <p class="font-light">
-                Semoga Lancar &  Langgeng Sampai Hari h
-              </p>
-              <div class="flex gap-2">
-                <img src="./images/history.svg" alt="">
-                <p class="font-extralight text-xs">01 Aug 2024, 10.34</p>
-              </div>
-            </div>
-
-            <hr class="my-5"> -->
-
+          <div>
+            <p class="underline text-lg mb-4">Wishes</p>
           </div>
+
+          <!-- List Message -->
+          <div id="itemList" class="mx-5 h-[24.5rem] overflow-y-scroll overflow-x-hidden border rounded-xl p-4"></div>
+
         </div>
 
         <div class="text-white text-center font-gara pt-16">
@@ -639,6 +597,97 @@
 
       // To check the scroll position on page load
       reveal();
+
+      // ===================
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const apiUrl = "https://66a081ef7053166bcabba66f.mockapi.io/items/wishes";
+        const itemForm = document.getElementById("itemForm");
+        const itemList = document.getElementById("itemList");
+        const itemNameInput = document.getElementById("itemName");
+        const itemMessageInput = document.getElementById("itemMessage");
+        const itemStatusInput = document.getElementById("itemStatus");
+        const buttonSubmit = document.getElementById("buttonSubmit");
+
+        // Fetch items from API and display them
+        function fetchItems() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    itemList.innerHTML = "";
+
+                    if(data.length > 0) {
+                      data.forEach(item => {
+                          const divList = document.createElement("div");
+  
+                          divList.innerHTML = `
+                              <div class="text-left flex flex-col gap-2">
+                              <div class="flex gap-2 items-center">
+                                  <p class="font-bold text-xl">${item.name}</p>
+                                  <p class="bg-white text-hitam h-fit rounded-full w-4 text-xs text-center">${item.status == 'hadir' ? '✓': '✕'}</p>
+                              </div>
+                              <p class="font-light">
+                                  ${item.message}
+                              </p>
+                              <div class="flex gap-2">
+                                  <img src="./images/history.svg" alt="">
+                                  <p class="font-extralight text-xs">${formatDate(new Date(item.createdAt))} WIB</p>
+                              </div>
+                              </div>
+  
+                              <hr class="my-5">
+                          `;
+                          
+                          divList.setAttribute("data-id", item.id);
+  
+                          itemList.appendChild(divList);
+                      });
+                    }else{
+                      itemList.innerHTML = '- Empty Data -';
+                    }
+                });
+        }
+
+        // Format date to "24 Jul 2024, 11.46"
+        function formatDate(date) {
+            const options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+            return date.toLocaleDateString('en-GB', options);
+        }
+
+        // Add or update item
+        itemForm.addEventListener("submit", function(event) {
+            buttonSubmit.innerHTML = "Sending..."
+            event.preventDefault();
+            const itemName = itemNameInput.value;
+            const itemMessage = itemMessageInput.value;
+            const itemStatus = itemStatusInput.value;
+
+            const itemData = {
+                name: itemName,
+                message: itemMessage,
+                status: itemStatus,
+                createdAt: new Date().toISOString()
+            };
+            
+            // Create new item
+            fetch(apiUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(itemData)
+            }).then(() => {
+                buttonSubmit.innerHTML = "Kirim"
+                fetchItems();
+                itemForm.reset();
+                itemNameInput.value = '';
+                itemMessageInput.value = '';
+                itemStatusInput.value = '';
+            });
+        });
+
+        // Initial fetch
+        fetchItems();
+      });
+
     </script>
   </body>
 </html>

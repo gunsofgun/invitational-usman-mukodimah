@@ -22,4 +22,26 @@
     font-family: "Ibarra Real Nova", serif;
     font-optical-sizing: auto;
     font-style: normal;
-  }
+}
+
+/* Styling scrollbar track (bagian di belakang scrollbar) */
+#itemList::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Styling bagian track scrollbar */
+#itemList::-webkit-scrollbar-track {
+    background: #242223;
+    border-radius: 8px;
+}
+
+/* Styling bagian thumb scrollbar (bagian yang digerakkan) */
+#itemList::-webkit-scrollbar-thumb {
+    background: #8b8b8b; /* warna thumb scrollbar */
+    border-radius: 8px; /* sudut bulat untuk thumb scrollbar */
+}
+
+/* Styling bagian thumb scrollbar saat di-hover */
+#itemList::-webkit-scrollbar-thumb:hover {
+    background: rgb(110, 110, 110)223; /* warna thumb scrollbar saat hover */
+}
